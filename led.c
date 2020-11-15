@@ -121,7 +121,7 @@ void led_blink(bool r, bool g, bool b, unsigned on_ms, unsigned off_ms)
 	p.off_ms = off_ms;
 
 	if (off_ms) {
-		thread = thread_create(blink_thread, &p);
+		thread = thread_create(blink_thread, &p, NULL);
 		running = 1;
 	} else {
 		led_set(p.r, p.g, p.b);
