@@ -1,3 +1,12 @@
+/*
+ * rgbd.c - RGB and Ethernet LED control
+ *
+ * Copyright (C) 2021 Linzhi Ltd.
+ *
+ * This work is licensed under the terms of the MIT License.
+ * A copy of the license can be found in the file COPYING.txt
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -35,7 +44,7 @@ static void daemonize(void)
 static void usage(const char *name)
 {
 	fprintf(stderr,
-"usage: %s [-b] [-v] [color|eon|eoff\n\n"
+"usage: %s [-b] [-v] [color|eon|eoff]\n\n"
 "-b  fork and run in backgound (default: don't fork)\n"
 "-v  verbose operation\n"
 "color is any combination of R, G, and B, or - for darkness\n"

@@ -1,0 +1,51 @@
+rgbd - RGB and Ethernet LED control
+===================================
+
+Copyright (C) 2021 Linzhi Ltd.
+
+This work is licensed under the terms of the MIT License.
+A copy of the license can be found in the file COPYING.txt
+
+
+Start the daemon
+----------------
+
+rgbd &
+
+or
+
+rgbd -b
+
+Invocation with -b ensures that rgbd is already listening to MQTT when
+the foreground process exits.
+
+
+Set the RGB LED to a specific color
+-----------------------------------
+
+rgbd R		red
+rgbd G		green
+rgbd B		blue
+rgbd RG		yellow
+rgbd RB		magenta
+rgbd GB		cyan
+rgbd RGB	white
+
+To blink the LED, one would have to run rgbd for each change. Alternatively,
+rgbd can be run as a daemon and blinking can then be set through MQTT.
+
+
+Turn the RGB LED off
+--------------------
+
+rgbd -
+
+
+Enable/disable the Ethernet LEDs
+--------------------------------
+
+rgbd eon
+rgbd eoff
+
+If the Ethernet LEDs are enabled, the pattern shown is controlled by the
+PHY.
